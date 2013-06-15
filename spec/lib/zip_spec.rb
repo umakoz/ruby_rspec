@@ -29,6 +29,10 @@ describe Zip do
 
   it "アルファベットが含まれている時" do
     Zip.new.valid?("abc-4567").should be_false
-    # Zip.new.valid?("876-5432").should be_false
+    Zip.new.valid?("876-defg").should be_false
+  end
+
+  it "ハイフンの位置が間違っている時" do
+    Zip.new.valid?("1234-567").should be_false
   end
 end
