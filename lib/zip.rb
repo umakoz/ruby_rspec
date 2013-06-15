@@ -2,16 +2,7 @@
 
 class Zip
   def valid?(zipcode)
-    if zipcode =~/^\d{3}$/
-      return true
-    end
-    if zipcode =~/^\d{7}$/
-      return true
-    end
-    if zipcode =~/^\d{3}-\d{4}$/
-      return true
-    end
-    false
+    return zipcode =~ /^[1-9]{3}(|(|-)[1-9]{4})$/
   end
 
 end
