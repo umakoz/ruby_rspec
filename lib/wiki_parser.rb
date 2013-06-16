@@ -9,9 +9,12 @@ class WikiParser
   end
 
   def to_header(text)
-    if text =~ /^=\s*(.+)/ && $1 =~ /(.+)\s*=$/ 
-      return "<h1>#{$1}</h1>"
+    6.downto(1) do |i|
+      if text =~ /^#{'=' * i}\s*/ && text =~ /\s*#{'=' * i}$/
+        return text.gsub(/^#{'=' * i}\s*/, "<h#{i}>").gsub(/\s*#{'=' * i}$/, "</h#{i}>")
+      end
     end
+
     text
   end
 end

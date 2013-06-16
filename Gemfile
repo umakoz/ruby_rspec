@@ -16,4 +16,5 @@ group :development do
   gem 'libnotify'
   # Runs on Windows
   gem 'rb-notifu'
+  gem 'rb-readline'
 end
