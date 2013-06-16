@@ -45,7 +45,19 @@ describe WikiParser do
   end
 
   context " ==で括られたテキストを、ヘッダに変換すること(H7)" do
-    it { wiki_parser.to_header("======= header =======").should eq '======= header ======='}
+    it { wiki_parser.to_header("======= header =======").should eq 'header'}
+  end
+
+  context "_で括られたテキストを、斜体に変換すること" do
+    it { wiki_parser.to_italic("_italic_").should eq '<i>italic</i>'}
+  end
+
+  context "_で括られたテキストを、斜体に変換すること" do
+    it { wiki_parser.to_italic("_ italic_").should eq '<i> italic</i>'}
+  end
+
+  context "*で括られたテキストを、太字に変換すること" do
+    it { wiki_parser.to_bold("*bold*").should eq '<b>bold</b>'}
   end
 
 end
