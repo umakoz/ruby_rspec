@@ -49,15 +49,15 @@ describe WikiParser do
   end
 
   context "_で括られたテキストを、斜体に変換すること" do
-    it { wiki_parser.to_italic("_italic_").should eq '<i>italic</i>'}
+    it { wiki_parser.to_typeface("_italic_").should eq '<i>italic</i>'}
   end
 
   context "_で括られたテキストを、斜体に変換すること" do
-    it { wiki_parser.to_italic("_ italic_").should eq '<i> italic</i>'}
+    it { wiki_parser.to_typeface("_ italic_").should eq '<i> italic</i>'}
   end
 
   context "*で括られたテキストを、太字に変換すること" do
-    it { wiki_parser.to_bold("*bold*").should eq '<b>bold</b>'}
+    it { wiki_parser.to_typeface("*bold*").should eq '<b>bold</b>'}
   end
 
 end

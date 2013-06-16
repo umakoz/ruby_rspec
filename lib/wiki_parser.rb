@@ -35,4 +35,9 @@ class WikiParser
     text
   end
 
+  def to_typeface(text)
+    text = to_bold(text)
+    text = to_italic(text)
+  end
+
 end
